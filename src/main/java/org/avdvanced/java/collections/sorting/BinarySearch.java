@@ -1,5 +1,7 @@
 package org.avdvanced.java.collections.sorting;
 
+import org.avdvanced.java.collections.Cat;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;

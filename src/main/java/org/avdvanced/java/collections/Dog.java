@@ -1,4 +1,4 @@
-package org.avdvanced.java.collections.sorting;
+package org.avdvanced.java.collections;
 
 public class Dog implements Comparable<Dog> {
     private String name;
@@ -8,6 +8,10 @@ public class Dog implements Comparable<Dog> {
         this.name = name;
         this.age = age;
     }
+
+    public Dog() {
+    }
+
     public Integer getAge() {
         return age;
     }

@@ -1,4 +1,4 @@
-package org.avdvanced.java.collections.sorting;
+package org.avdvanced.java.collections;
 
 public class Cat implements Comparable<Cat> {
     private String name;
@@ -7,6 +7,9 @@ public class Cat implements Comparable<Cat> {
     public Cat(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public Cat() {
     }
 
     public String getName() {

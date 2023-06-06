@@ -18,8 +18,8 @@ NOTE: The editor copies the properties files into the correct "target" directory
 public class BundleSearching {
     public static void main(String[] args) {
         defaultLocaleIrrelevant();
-//        ignoreAmericanBundle();
-//        usingDefaultLocale();
+        ignoreAmericanBundle();
+        usingDefaultLocale();
     }
     public static void defaultLocaleIrrelevant(){ // finds Mill_en_CA.properties
 //        Locale.setDefault(new Locale("en", "IE"));
@@ -33,7 +33,7 @@ public class BundleSearching {
         //      - Mill_en_CA.properties
         //      - Mill_en.properties
         //      - Mill.properties (default bundle)
-        ResourceBundle rb = ResourceBundle.getBundle("org.advanced.java.localisation.Mill", localeCA);
+        ResourceBundle rb = ResourceBundle.getBundle("bundle", localeCA);
         // Because we are locked into a hierarchy (see above), this is why "name" below
         // comes up with "Some Mill" even though the "name" key is in the default locale
         // as well i.e. Mill_en_IE.properties.
@@ -52,7 +52,7 @@ public class BundleSearching {
         //      default locale Mill_en_IE.java/properties is irrelevant).
         //      - Mill_en.properties
         //      - Mill.properties (default bundle)
-        ResourceBundle rb = ResourceBundle.getBundle("lets_get_certified.localisation.Mill", localeUS);
+        ResourceBundle rb = ResourceBundle.getBundle("bundle", localeUS);
         System.out.println(rb.getString("open"));// is open
         System.out.println(rb.getString("name"));// Some Mill
         System.out.println("-------------");
@@ -71,7 +71,7 @@ public class BundleSearching {
         //      - Mill_en_IE.properties (default locale) 
         //      - Mill_en.properties
         //      - Mill.properties (default bundle)        
-        ResourceBundle rb = ResourceBundle.getBundle("lets_get_certified.localisation.Mill", localeFR);
+        ResourceBundle rb = ResourceBundle.getBundle("bundle", localeFR);
         System.out.println(rb.getString("open"));// is open
         System.out.println(rb.getString("name"));// Irish Mill
         System.out.println("-------------");

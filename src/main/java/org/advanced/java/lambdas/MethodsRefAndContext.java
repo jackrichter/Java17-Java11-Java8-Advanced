@@ -8,14 +8,14 @@ public class MethodsRefAndContext {
     public static void main(String[] args) {
         // No Person being passed in => Supplier
         Supplier<Integer> supLambda = () -> Person.howMany();
-        Supplier<Integer> supMR = Person::howMany;
+        Supplier<Integer> supMR = Person::howMany;          // Context is Supplier
 
         System.out.println(supLambda.get());    // 0
         System.out.println(supMR.get());        // 0
 
         // One Person to be passed in => Function
         Function<Person, Integer> funcLambda = person -> Person.howMany(person);
-        Function<Person, Integer> funcMR = Person::howMany;         // Context
+        Function<Person, Integer> funcMR = Person::howMany;         // Context is Function
         int totLambda = funcLambda.apply(new Person());
         int totMR = funcMR.apply(new Person());
         System.out.println(totLambda);      // 1
@@ -23,7 +23,7 @@ public class MethodsRefAndContext {
 
         // Two Person's to be passed in => BiFunction
         BiFunction<Person, Person, Integer> biFuncLambda = (p1, p2) -> Person.howMany(p1, p2);
-        BiFunction<Person, Person, Integer> biFuncMR = Person::howMany;             // Context
+        BiFunction<Person, Person, Integer> biFuncMR = Person::howMany;             // Context is BiFunction
         int totLambda2 = biFuncLambda.apply(new Person(), new Person());
         int totMR2 = biFuncMR.apply(new Person(), new Person());
         System.out.println(totLambda2);     // 2
@@ -31,7 +31,7 @@ public class MethodsRefAndContext {
     }
 
     static class Person {
-        public static Integer howMany(Person... people) {           // Passing an Array of Person. 0 -> n
+        public static Integer howMany(Person... people) {           // Passing varArgs of Person. 0 -> n
             return people.length;
         }
     }
